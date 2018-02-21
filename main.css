@@ -194,7 +194,7 @@ h2.section-heading {
 header.masthead {
   text-align: center;
   color: black;
-  background-image: url("../img/header2.jpeg");
+  background-image: url("img/header2.jpeg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -282,7 +282,7 @@ header.masthead .intro-text .intro-heading {
 
 section#contact {
   background-color: #212529;
-  background-image: url("../img/contact3.jpeg");
+  background-image: url("img/contact3.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

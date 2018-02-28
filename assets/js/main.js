@@ -1,25 +1,18 @@
 (function($) {
   "use strict"; // Start of use strict
 
-  // handle links with @href started with '#' only
-  $(document).on('click', 'a[href^="#"]', function(e) {
-      // target element id
-      var id = $(this).attr('href');
-
-      // target element
-      var $id = $(id);
-      if ($id.length === 0) {
-          return;
+  // Smooth scrolling using jQuery easing
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: (target.offset().top - 54)
+        }, 1000, "easeInOutExpo");
+        return false;
       }
-
-      // prevent standard hash navigation (avoid blinking in IE)
-      e.preventDefault();
-
-      // top position relative to the document
-      var pos = $id.offset().top;
-
-      // animated top scrolling
-      $('body, html').animate({scrollTop: pos});
+    }
   });
 
   // Closes responsive menu when a scroll trigger link is clicked
@@ -46,4 +39,4 @@
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
 
-  })(jQuery); // End of use strict
+})(jQuery); // End of use strict
